@@ -7,30 +7,84 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Halaman Awal -->
-  <div class="card" id="home-page">
-    <div id="motivasi-container">
-      <p id="motivasi-text">"Kesuksesan dimulai dari langkah pertama"</p>
+  <!-- Halaman Awal Motivasi -->
+  <div class="card" id="motivation-page">
+    <div class="motivation-container">
+      <p id="motivation-text">"Kesuksesan dimulai dari langkah pertama"</p>
     </div>
-    <button class="btn menu-btn" onclick="navigate('main-menu')">Menu Pembayaran</button>
+    <button class="btn menu-btn" onclick="navigate('home')">Menu Pembayaran</button>
   </div>
 
   <!-- Halaman Pembayaran -->
   <div class="card hidden" id="payment-page">
-    <button class="back-btn" onclick="navigate('home-page')">← Kembali</button>
+    <button class="back-btn" onclick="goBack()">← Kembali</button>
     
-    <section id="main-menu" class="section">
+    <section id="home" class="section">
       <h1>Metode Pembayaran</h1>
       <button class="btn dana" onclick="navigate('dana')">Dana</button>
       <button class="btn gopay" onclick="navigate('gopay')">Gopay</button>
       <button class="btn qris" onclick="navigate('qris')">QRIS</button>
+      <button class="btn telegram" onclick="window.open('https://t.me/ditx222', '_blank')">Telegram</button>
+      <button class="btn group" onclick="window.open('https://t.me/groupchatditxa', '_blank')">Grup Telegram</button>
     </section>
 
-    <!-- Section metode pembayaran (sama seperti sebelumnya) -->
-    <!-- ... -->
-    
+    <section id="dana" class="hidden section">
+      <h1>Dana</h1>
+      <img src="https://files.catbox.moe/kjaqij.jpg" alt="Dana QR" class="qris-img">
+      <div class="form-group">
+        <label>Jumlah Transaksi (Rp)</label>
+        <input type="number" id="dana-amount">
+      </div>
+      <div class="form-group">
+        <label>Nama</label>
+        <input type="text" id="dana-name">
+      </div>
+      <div id="dana-warning"></div>
+      <button class="btn dana" onclick="validateData('dana')">Lanjut</button>
+      <button class="btn" onclick="navigate('home')">Kembali</button>
+    </section>
+
+    <section id="gopay" class="hidden section">
+      <h1>Gopay</h1>
+      <img src="https://files.catbox.moe/125oqf.jpg" alt="Gopay QR" class="qris-img">
+      <div class="form-group">
+        <label>Jumlah Transaksi (Rp)</label>
+        <input type="number" id="gopay-amount">
+      </div>
+      <div class="form-group">
+        <label>Nama</label>
+        <input type="text" id="gopay-name">
+      </div>
+      <div id="gopay-warning"></div>
+      <button class="btn gopay" onclick="validateData('gopay')">Lanjut</button>
+      <button class="btn" onclick="navigate('home')">Kembali</button>
+    </section>
+
+    <section id="qris" class="hidden section">
+      <h1>QRIS</h1>
+      <img src="https://i.ibb.co/h8BLHzB/qris-example.jpg" alt="Kode QRIS" class="qris-img">
+      <div class="form-group">
+        <label>Jumlah Transaksi (Rp)</label>
+        <input type="number" id="qris-amount">
+      </div>
+      <div class="form-group">
+        <label>Nama</label>
+        <input type="text" id="qris-name">
+      </div>
+      <div id="qris-warning"></div>
+      <button class="btn qris" onclick="validateData('qris')">Lanjut</button>
+      <button class="btn" onclick="navigate('home')">Kembali</button>
+    </section>
+
+    <section id="info" class="hidden section">
+      <h1>Informasi Pembayaran</h1>
+      <div class="pay-info" id="payment-data"></div>
+      <div class="note" id="payment-extra"></div>
+      <button class="btn telegram" id="sendToTelegram">Kirim Bukti via Telegram</button>
+      <button class="btn" onclick="navigate('home')">Kembali</button>
+    </section>
   </div>
 
   <script src="script.js"></script>
 </body>
-</html>
+        </html>
