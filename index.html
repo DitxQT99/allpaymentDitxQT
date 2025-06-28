@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Motivasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Halaman Awal -->
+  <div class="card" id="home-page">
+    <div id="motivasi-container">
+      <p id="motivasi-text">"Kesuksesan dimulai dari langkah pertama"</p>
+    </div>
+    <button class="btn menu-btn" onclick="navigate('main-menu')">Menu Pembayaran</button>
+  </div>
+
+  <!-- Halaman Pembayaran -->
+  <div class="card hidden" id="payment-page">
+    <button class="back-btn" onclick="navigate('home-page')">← Kembali</button>
+    
+    <section id="main-menu" class="section">
+      <h1>Metode Pembayaran</h1>
+      <button class="btn dana" onclick="navigate('dana')">Dana</button>
+      <button class="btn gopay" onclick="navigate('gopay')">Gopay</button>
+      <button class="btn qris" onclick="navigate('qris')">QRIS</button>
+    </section>
+
+    <!-- Section metode pembayaran (sama seperti sebelumnya) -->
+    <!-- ... -->
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
