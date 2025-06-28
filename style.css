@@ -1,0 +1,32 @@
+/* Gaya Halaman Awal */
+#home-page {
+  text-align: center;
+}
+
+#motivasi-container {
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+#motivasi-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.menu-btn {
+  background: var(--accent);
+}
+
+.back-btn {
+  background: none;
+  color: var(--fg);
+  border: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
